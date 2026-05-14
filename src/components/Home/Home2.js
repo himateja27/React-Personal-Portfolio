@@ -32,7 +32,7 @@ function Home2() {
               <i>
                 <b className="purple">
                   {" "}
-                  HTML, CSS, JavaScript, React, Python, Golang, SQL, and Django{" "}
+                  HTML, CSS, JavaScript, React, Python, MySQL, and Django{" "}
                 </b>
               </i>
               — and I enjoy working across both backend and frontend stacks.
