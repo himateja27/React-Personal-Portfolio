@@ -2,52 +2,83 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import editor from "../../Assets/Projects/codeEditor.png";
-import chatify from "../../Assets/Projects/chatify.png";
-import bitsOfCode from "../../Assets/Projects/blog.png";
 
 function Projects() {
   return (
-    <Container fluid className="project-section">
+    <section className="project-section" id="projects">
       <Particle />
       <Container>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
+        <div className="section-header">
+          <h2 className="section-heading">Selected Projects</h2>
+          <p className="section-text">
+            Professional applications built with Django REST Framework,
+            React.js, MySQL, JWT authentication, and modern web technologies.
+          </p>
+        </div>
+
+        <Row className="project-card-row">
+          <Col lg={6} md={12} className="project-card-col">
             <ProjectCard
-              imgPath={chatify}
-              isBlog={false}
-              title="Banking System"
-              description="– Built a secure
-          API with endpoints for account creation, deposits, withdrawals,
-          balance checks, and transaction history. Implemented models for account transation"
-              ghLink="https://github.com/himateja27/django-banking-system"
-              demoLink=""
+              title="Bus Ticket Booking System"
+              description="A comprehensive bus booking platform with secure authentication, role-based access control, booking workflows, and seat allocation management."
+              features={[
+                "Secure JWT authentication and role-based access control",
+                "Booking workflows with real-time seat allocation",
+                "REST API integration with Django REST Framework",
+                "MySQL database optimization for schedules and reservations",
+              ]}
+              frontendLink="https://github.com/himateja27/React-Frontend-BusTicketBooking-System"
+              backendLink="https://github.com/himateja27/Django-Backend-BusTicketBooking-System"
+              liveLink=""
             />
           </Col>
-          <Col md={4} className="project-card">
+          <Col lg={6} md={12} className="project-card-col">
             <ProjectCard
-              imgPath={bitsOfCode}
-              isBlog={false}
-              title="Personal-Portfolio"
-              description="My personal portfolio is built with React and Tailwind CSS. It showcases my projects, skills, and resume in a clean, modern interface. The site supports dark mode and features dynamic sections for work experience, education, and contact information. Content is easy to update using structured components, making it simple to highlight new projects or achievements."
-              ghLink="https://github.com/himateja27/Personal-Portfolio"
-              demoLink="https://personal-portfolio-black-pi.vercel.app/"
+              title="FactoryIQ – Manufacturing ERP System"
+              description="A multi-role manufacturing ERP platform with inventory management, production tracking, real-time dashboards, and secure JWT authentication."
+              features={[
+                "Multi-role ERP system with production and inventory modules",
+                "JWT authentication and secure token-based access",
+                "Real-time dashboards and RESTful APIs",
+                "Email notifications for key production events",
+              ]}
+              repoLink="https://github.com/himateja27/FactoryIQ-Manufacturing-Management-Portal-System"
+              liveLink=""
             />
           </Col>
-          "
-          <Col md={4} className="project-card">
+          <Col lg={6} md={12} className="project-card-col">
             <ProjectCard
-              imgPath={editor}
-              isBlog={false}
-              title="Ride-Booking"
-              description="A Golang(Gin)-based web application that allows users to register application and book rides, and view ride history. The system includes secure login, ride management, and admin controls, with backend APIs connected to a MySQL database and also used React js for user interface."
-              ghLink="https://github.com/himateja27/ride-booking"
-              demoLink=""
+              title="Personal Portfolio"
+              description="A modern, responsive portfolio website built with React.js, showcasing professional projects, skills, and experience in Python Full Stack development."
+              features={[
+                "Responsive React.js frontend with modern UI/UX",
+                "Professional project showcases and skill highlights",
+                "Contact forms and social media integration",
+                "Optimized for performance and SEO",
+              ]}
+              repoLink="https://github.com/himateja27/Personal-Portfolio-Frontend"
+              liveLink=""
+            />
+          </Col>
+          <Col lg={6} md={12} className="project-card-col">
+            <ProjectCard
+              title="LangChain Document Q&A Bot"
+              description="A complete end-to-end Document Q&A system using RAG (Retrieval-Augmented Generation) that allows users to ask questions about documents and receive accurate answers with source citations."
+              features={[
+                "Multi-format document support: PDF, TXT, DOCX",
+                "Intelligent text chunking with configurable overlap",
+                "Advanced embeddings using OpenAI and HuggingFace models",
+                "Vector databases: FAISS or ChromaDB with persistent storage",
+                "Smart retrieval with similarity search and citations",
+                "Django web interface and CLI for interaction",
+              ]}
+              repoLink="https://github.com/himateja27/langchainocument"
+              liveLink=""
             />
           </Col>
         </Row>
       </Container>
-    </Container>
+    </section>
   );
 }
 

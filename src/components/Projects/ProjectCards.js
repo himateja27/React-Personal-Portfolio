@@ -1,40 +1,73 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import { CgWebsite } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
+import { CgWebsite } from "react-icons/cg";
 
-function ProjectCards(props) {
+function ProjectCard({
+  title,
+  description,
+  features,
+  frontendLink,
+  backendLink,
+  repoLink,
+  liveLink,
+}) {
   return (
     <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
       <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }}>
-          {props.description}
-        </Card.Text>
-        <Button variant="primary" href={props.ghLink} target="_blank">
-          <BsGithub /> &nbsp;
-          {props.isBlog ? "Blog" : "GitHub"}
-        </Button>
-        {"\n"}
-        {"\n"}
-
-        {/* If the component contains Demo link and if it's not a Blog then, it will render the below component  */}
-
-        {!props.isBlog && props.demoLink && (
-          <Button
-            variant="primary"
-            href={props.demoLink}
-            target="_blank"
-            style={{ marginLeft: "10px" }}
-          >
-            <CgWebsite /> &nbsp;
-            {"Demo"}
-          </Button>
-        )}
+        <Card.Title>{title}</Card.Title>
+        <Card.Text className="project-description">{description}</Card.Text>
+        <ul className="project-features">
+          {features.map((feature, index) => (
+            <li key={index}>{feature}</li>
+          ))}
+        </ul>
+        <div className="project-actions">
+          {repoLink && (
+            <Button
+              variant="primary"
+              href={repoLink}
+              target="_blank"
+              className="project-action-button"
+            >
+              <BsGithub /> GitHub
+            </Button>
+          )}
+          {frontendLink && (
+            <Button
+              variant="primary"
+              href={frontendLink}
+              target="_blank"
+              className="project-action-button"
+            >
+              <BsGithub /> Frontend GitHub
+            </Button>
+          )}
+          {backendLink && (
+            <Button
+              variant="outline-light"
+              href={backendLink}
+              target="_blank"
+              className="project-action-button"
+            >
+              <BsGithub /> Backend GitHub
+            </Button>
+          )}
+          {liveLink && (
+            <Button
+              variant="outline-light"
+              href={liveLink}
+              target="_blank"
+              className="project-action-button"
+            >
+              <CgWebsite /> Live Demo
+            </Button>
+          )}
+        </div>
       </Card.Body>
     </Card>
   );
 }
-export default ProjectCards;
+
+export default ProjectCard;

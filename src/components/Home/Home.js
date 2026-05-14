@@ -1,108 +1,103 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home-main.svg";
+﻿import React from "react";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import { TypeAnimation } from "react-type-animation";
 import Particle from "../Particle";
 import Home2 from "./Home2";
-import Type from "./Type";
-import Techstack from "../About/Techstack";
-import Github from "../About/Github";
-import {
-  AiFillGithub,
-  AiOutlineTwitter,
-  AiFillInstagram,
-} from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
 
 function Home() {
   return (
-    <section>
-      <Container fluid className="home-section" id="home">
-        <Particle />
-        <Container className="home-content">
-          <Row>
-            <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
-                Hi There!{" "}
-                <span className="wave" role="img" aria-labelledby="wave">
-                  👋🏻
-                </span>
-              </h1>
-
-              <h1 className="heading-name">
-                I'M
-                <strong className="main-name"> HIMA TEJA VANKAYALAPATI </strong>
-              </h1>
-
-              <div style={{ padding: 50, textAlign: "left" }}>
-                <Type />
-              </div>
-            </Col>
-
-            <Col md={5} style={{ paddingBottom: 20 }}>
+    <section id="home" className="hero-section">
+      <Particle />
+      <Container className="hero-content">
+        <Row className="align-items-center">
+          <Col lg={6} md={12} className="hero-copy">
+            <div className="profile-image-container">
               <img
-                src={homeLogo}
-                alt="home pic"
-                className="img-fluid"
-                style={{ maxHeight: "450px" }}
+                src={process.env.PUBLIC_URL + "/media/profile.jpg"}
+                alt="Hima Teja Vankayalapati"
+                className="profile-image"
+                onError={(e) => {
+                  e.target.src =
+                    process.env.PUBLIC_URL + "/media/whatsapp-image.jpg";
+                }}
               />
-            </Col>
-          </Row>
-        </Container>
-      </Container>
-      <Home2 />
-
-      <Container>
-        <Row style={{ paddingTop: "50px", paddingBottom: "80px" }}>
-          <Col md={12} className="home-about-social">
-            <h1>Find Me On</h1>
-            <p>
-              Feel free to <span className="purple">connect </span>with me
+            </div>
+            <h1>HIMA TEJA VANKAYALAPATI</h1>
+            <div className="dynamic-role">
+              <TypeAnimation
+                sequence={[
+                  "Python Full Stack Developer",
+                  2000,
+                  "Backend Developer",
+                  2000,
+                  "Frontend Developer",
+                  2000,
+                  "Django Developer",
+                  2000,
+                  "React.js Developer",
+                  2000,
+                  "REST API Developer",
+                  2000,
+                  "Full Stack Engineer",
+                  2000,
+                  "Python Developer",
+                  2000,
+                  "Software Developer",
+                  2000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+                className="typing-text"
+              />
+            </div>
+            <p className="hero-description">
+              I build production-ready web applications with Django, Django REST
+              Framework, React.js, MySQL and secure JWT-based authentication. My
+              work is focused on scalable backend architecture, REST API
+              development and polished frontend experiences.
             </p>
-            <ul className="home-about-social-links">
-              <li className="social-icons">
-                <a
-                  href="https://github.com/himateja27"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiFillGithub />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://twitter.com/HimaTeja27"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiOutlineTwitter />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.linkedin.com/in/HimaTeja27/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <FaLinkedinIn />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.instagram.com/himatejareddy._"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                >
-                  <AiFillInstagram />
-                </a>
-              </li>
-            </ul>
+            <div className="hero-actions">
+              <Button variant="primary" href="/resume" className="hero-button">
+                Download Resume
+              </Button>
+              <Button
+                variant="outline-light"
+                href="#projects"
+                className="hero-button"
+              >
+                View Projects
+              </Button>
+              <Button
+                variant="outline-light"
+                href="https://github.com/himateja27"
+                target="_blank"
+                rel="noreferrer"
+                className="hero-button"
+              >
+                GitHub
+              </Button>
+              <Button
+                variant="outline-light"
+                href="https://www.linkedin.com/in/himateja27/"
+                target="_blank"
+                rel="noreferrer"
+                className="hero-button"
+              >
+                LinkedIn
+              </Button>
+              <Button
+                variant="outline-light"
+                href="#contact"
+                className="hero-button"
+              >
+                Contact Me
+              </Button>
+            </div>
           </Col>
         </Row>
       </Container>
+      <Home2 />
     </section>
   );
 }
