@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 
@@ -85,13 +85,13 @@ function Projects() {
           </p>
         </div>
 
-        <div className="project-card-row">
+        <Row className="project-card-row g-4">
           {projects.map((project) => (
-            <div className="project-card-col" key={project.title}>
+            <Col key={project.title} lg={6} md={12} className="project-card-col">
               <ProjectCard {...project} />
-            </div>
+            </Col>
           ))}
-        </div>
+        </Row>
       </Container>
     </section>
   );

@@ -28,9 +28,10 @@ function About() {
     <section className="about-page">
       <Particle />
       <Container className="page-container">
+        <div className="about-summary-block">
         <Row className="about-top-row g-4">
-          <Col lg={7} md={12} className="about-intro">
-            <h2 className="section-heading">Professional Summary</h2>
+          <Col xl={7} lg={12} className="about-intro">
+            <h2 className="section-heading text-start">Professional Summary</h2>
             <p className="section-text">
               I am a Python Full Stack Developer with proven experience
               implementing Django and Django REST Framework applications for
@@ -57,12 +58,14 @@ function About() {
               </li>
             </ul>
           </Col>
-          <Col lg={5} md={12} className="about-card-column">
+          <Col xl={5} lg={12} className="about-card-column">
             <Aboutcard />
           </Col>
         </Row>
+        </div>
 
-        <Row className="skills-section">
+        <div className="about-skills-block">
+        <Row className="skills-section g-4">
           <Col md={12}>
             <h2 className="section-heading">Core Skills</h2>
           </Col>
@@ -74,7 +77,9 @@ function About() {
             <Toolstack />
           </Col>
         </Row>
+        </div>
 
+        <div className="about-career-block">
         <Row className="career-section g-4">
           <Col lg={6} md={12}>
             <div className="detail-panel">
@@ -112,7 +117,9 @@ function About() {
             </div>
           </Col>
         </Row>
+        </div>
 
+        <div className="about-github-block">
         <Row className="github-section">
           <Col md={12}>
             <h2 className="section-heading">GitHub Profile</h2>
@@ -123,7 +130,9 @@ function About() {
             <Github />
           </Col>
         </Row>
+        </div>
 
+        <div className="about-contact-block">
         <Row className="contact-section g-4" id="contact">
           <Col lg={5} md={12} className="contact-panel">
             <h2 className="section-heading">Contact</h2>
@@ -210,6 +219,7 @@ function About() {
             </Form>
           </Col>
         </Row>
+        </div>
       </Container>
     </section>
   );
