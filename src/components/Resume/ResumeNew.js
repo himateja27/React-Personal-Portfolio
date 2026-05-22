@@ -1,32 +1,12 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { Document, Page, pdfjs } from "react-pdf";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
-
 function ResumeNew() {
-  const [numPages, setNumPages] = useState(null);
-  const [pageWidth, setPageWidth] = useState(800);
-
   const resumeFileName = "Hima_Teja_Vankayalapati_Resume.pdf";
   const resumeUrl =
     process.env.PUBLIC_URL + "/media/himateja-fullstack-dev.pdf";
-
-  const updatePageWidth = useCallback(() => {
-    const containerPadding = 48;
-    const maxWidth = 900;
-    setPageWidth(
-      Math.min(window.innerWidth - containerPadding, maxWidth)
-    );
-  }, []);
-
-  useEffect(() => {
-    updatePageWidth();
-    window.addEventListener("resize", updatePageWidth);
-    return () => window.removeEventListener("resize", updatePageWidth);
-  }, [updatePageWidth]);
 
   const handleDownload = () => {
     fetch(resumeUrl)
@@ -45,10 +25,6 @@ function ResumeNew() {
         console.error("Download error:", error);
         window.open(resumeUrl, "_blank");
       });
-  };
-
-  const onDocumentLoadSuccess = ({ numPages: total }) => {
-    setNumPages(total);
   };
 
   return (
@@ -76,39 +52,18 @@ function ResumeNew() {
             href={resumeUrl}
             target="_blank"
             rel="noreferrer"
-            className="download-btn ms-2"
+            className="download-btn"
           >
             Open in New Tab
           </Button>
         </div>
 
         <div className="resume-preview">
-          <Document
-            file={resumeUrl}
-            onLoadSuccess={onDocumentLoadSuccess}
-            loading={<p className="resume-loading">Loading resume...</p>}
-            error={
-              <div className="pdf-error-message">
-                <p>Unable to preview the resume here.</p>
-                <Button variant="primary" onClick={handleDownload}>
-                  <AiOutlineDownload /> Download Resume PDF
-                </Button>
-              </div>
-            }
-            className="resume-document"
-          >
-            {numPages &&
-              Array.from({ length: numPages }, (_, index) => (
-                <Page
-                  key={`page_${index + 1}`}
-                  pageNumber={index + 1}
-                  width={pageWidth}
-                  className="resume-pdf-page"
-                  renderTextLayer={false}
-                  renderAnnotationLayer={false}
-                />
-              ))}
-          </Document>
+          <iframe
+            src={resumeUrl}
+            title="Hima Teja Vankayalapati Resume"
+            className="resume-iframe"
+          />
         </div>
 
         <Row className="resume-keypoints g-4">
