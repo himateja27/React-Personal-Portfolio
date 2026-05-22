@@ -5,11 +5,13 @@ function AboutCard() {
   return (
     <Card className="about-profile-card">
       <Card.Body>
-        <Card.Title>HIMA TEJA VANKAYALAPATI</Card.Title>
-        <Card.Subtitle className="mb-3 text-muted">
+        <Card.Title className="profile-card-name">
+          HIMA TEJA VANKAYALAPATI
+        </Card.Title>
+        <Card.Subtitle className="profile-card-role">
           Python Full Stack Developer
         </Card.Subtitle>
-        <Card.Text>
+        <Card.Text className="profile-card-text">
           I design and deliver scalable Django applications, REST APIs with DRF,
           JWT authentication and responsive React.js interfaces backed by MySQL.
           I focus on production-ready systems, secure architecture, and strong

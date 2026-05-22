@@ -1,5 +1,4 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
 import {
   SiGithub,
   SiGit,
@@ -22,14 +21,14 @@ function Toolstack() {
   ];
 
   return (
-    <Row className="tool-stack-row">
-      {tools.map((tool, index) => (
-        <Col xs={6} md={4} lg={2} key={index} className="tool-icon-card">
+    <div className="skills-grid tools-grid">
+      {tools.map((tool) => (
+        <div className="skill-card tool-card" key={tool.label}>
           <div className="tool-icon-inner">{tool.icon}</div>
-          <div className="tech-icons-text">{tool.label}</div>
-        </Col>
+          <span className="skill-label">{tool.label}</span>
+        </div>
       ))}
-    </Row>
+    </div>
   );
 }
 
