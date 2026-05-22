@@ -21,7 +21,7 @@ function About() {
     e.preventDefault();
     const subject = `Portfolio contact from ${formData.name}`;
     const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0A${formData.message}`;
-    window.location.href = `mailto:himateja27@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:himatejahima032@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -128,8 +128,8 @@ function About() {
           <Col lg={5} md={12} className="contact-panel">
             <h2 className="section-heading">Contact</h2>
             <p className="section-text">
-              Reach out for Python Full Stack roles, API development or backend
-              systems work.
+              Reach out by email or phone for Python Full Stack roles,
+              backend systems, API development, or portfolio project work.
             </p>
             <div className="contact-cards">
               <div className="contact-card">
@@ -137,6 +137,10 @@ function About() {
                 <a href="mailto:himatejahima032@gmail.com">
                   himatejahima032@gmail.com
                 </a>
+              </div>
+              <div className="contact-card">
+                <h4>Phone</h4>
+                <a href="tel:+916302562033">+91 6302562033</a>
               </div>
               <div className="contact-card">
                 <h4>GitHub</h4>

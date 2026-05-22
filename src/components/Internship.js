@@ -22,18 +22,12 @@ function Internship() {
                 </div>
                 <div className="internship-description">
                   <p>
-                    Completed a comprehensive virtual internship in Embedded
-                    Systems, gaining hands-on experience with microcontroller
-                    programming, sensor integration, and real-time system
-                    development. Developed practical skills in IoT applications
-                    and embedded software design.
+                    Completed a virtual internship in Embedded Systems with focus on Python programming concepts. Gained hands-on experience applying Python to solve real-world technical problems in embedded environments.
                   </p>
                   <ul className="internship-highlights">
-                    <li>Microcontroller Programming (Arduino, Raspberry Pi)</li>
-                    <li>Sensor Integration and Data Acquisition</li>
-                    <li>Real-time Operating Systems (RTOS)</li>
-                    <li>IoT Protocol Implementation</li>
-                    <li>Embedded C/C++ Development</li>
+                    <li>Applied Python programming concepts to solve real-world technical problems in embedded environments</li>
+                    <li>Performed debugging, optimization, and error analysis to improve overall code performance</li>
+                    <li>Gained exposure to Software Development Life Cycle (SDLC) and Agile methodologies in a team setting</li>
                   </ul>
                 </div>
               </div>

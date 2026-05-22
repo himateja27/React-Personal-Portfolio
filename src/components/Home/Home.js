@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { TypeAnimation } from "react-type-animation";
 import Particle from "../Particle";
@@ -18,11 +18,11 @@ function Home() {
                 className="profile-image"
                 onError={(e) => {
                   e.target.src =
-                    process.env.PUBLIC_URL + "/media/whatsapp-image.jpg";
+                    process.env.PUBLIC_URL + "/media/profile.svg";
                 }}
               />
             </div>
-            <h1>HIMA TEJA VANKAYALAPATI</h1>
+            <h1>HIMA TEJA</h1>
             <div className="dynamic-role">
               <TypeAnimation
                 sequence={[
@@ -63,10 +63,24 @@ function Home() {
               </Button>
               <Button
                 variant="outline-light"
-                href="#projects"
+                href="/project"
                 className="hero-button"
               >
                 View Projects
+              </Button>
+              <Button
+                variant="outline-light"
+                href="mailto:himatejahima032@gmail.com"
+                className="hero-button"
+              >
+                Email Me
+              </Button>
+              <Button
+                variant="outline-light"
+                href="tel:+916302562033"
+                className="hero-button"
+              >
+                Call Me
               </Button>
               <Button
                 variant="outline-light"
@@ -85,13 +99,6 @@ function Home() {
                 className="hero-button"
               >
                 LinkedIn
-              </Button>
-              <Button
-                variant="outline-light"
-                href="#contact"
-                className="hero-button"
-              >
-                Contact Me
               </Button>
             </div>
           </Col>

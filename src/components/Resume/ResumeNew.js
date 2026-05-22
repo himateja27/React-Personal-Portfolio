@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
-import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function ResumeNew() {
   const [width, setWidth] = useState(1200);
@@ -14,14 +11,28 @@ function ResumeNew() {
     setWidth(window.innerWidth);
   }, []);
 
+  const resumeFileName = "Hima_Teja_Vankayalapati_Resume.pdf";
   const resumeUrl =
     process.env.PUBLIC_URL + "/media/himateja-fullstack-dev.pdf";
 
   const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = resumeUrl;
-    link.download = "Hima_Teja_Vankayalapati_Resume.pdf";
-    link.click();
+    fetch(resumeUrl)
+      .then(response => response.blob())
+      .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = resumeFileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      })
+      .catch(error => {
+        console.error("Download error:", error);
+        // Fallback: try direct navigation
+        window.open(resumeUrl, "_blank");
+      });
   };
 
   const onDocumentLoadSuccess = () => {
@@ -71,14 +82,20 @@ function ResumeNew() {
               </Button>
             </div>
           ) : (
-            <Document
-              file={resumeUrl}
-              onLoadSuccess={onDocumentLoadSuccess}
-              onLoadError={onDocumentLoadError}
-              className="d-flex justify-content-center"
+            <object
+              data={resumeUrl}
+              type="application/pdf"
+              width="100%"
+              height="900px"
             >
-              <Page pageNumber={1} scale={width > 786 ? 1.5 : 0.7} />
-            </Document>
+              <p>
+                Your browser does not support PDF preview. Please download the
+                resume using the button above or open it directly.
+              </p>
+              <a href={resumeUrl} target="_blank" rel="noreferrer">
+                Open Resume PDF
+              </a>
+            </object>
           )}
         </div>
 

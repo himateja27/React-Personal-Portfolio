@@ -72,7 +72,21 @@ function Projects() {
                 "Smart retrieval with similarity search and citations",
                 "Django web interface and CLI for interaction",
               ]}
-              repoLink="https://github.com/himateja27/langchainocument"
+              repoLink="https://github.com/himateja27/langchain"
+              liveLink=""
+            />
+          </Col>
+          <Col lg={6} md={12} className="project-card-col">
+            <ProjectCard
+              title="Voting/Poll Application"
+              description="A modern polling application with Django REST Framework backend and React frontend, allowing users to create polls, vote, and view live percentage-based results."
+              features={[
+                "Create polls with 2-4 options and live result updates",
+                "Vote tracking with client-side duplicate prevention",
+                "Animated percentage bars and responsive Tailwind UI",
+                "Django REST API with MySQL and CORS support",
+              ]}
+              repoLink="https://github.com/himateja27/Voting-PollApp"
               liveLink=""
             />
           </Col>
