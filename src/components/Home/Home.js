@@ -8,7 +8,7 @@ function Home() {
   return (
     <section id="home" className="hero-section">
       <Particle />
-      <Container className="hero-content">
+      <Container className="hero-content page-container">
         <Row className="align-items-center">
           <Col lg={6} md={12} className="hero-copy">
             <div className="profile-image-container">

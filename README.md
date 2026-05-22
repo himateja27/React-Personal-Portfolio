@@ -1,65 +1,137 @@
-<h2 align="center">
-  Portfolio Website - v2.0<br/>
-  <a href="https://personal-portfolio-black-pi.vercel.app//" target="_blank">Hima Teja</a>
-</h2>
-<div align="center">
-  <img alt="Demo" src="./Images/readme-img1.png" />
-</div>
+# React Personal Portfolio
 
-<br/>
+Modern, responsive portfolio website for **Hima Teja Vankayalapati** — Python Full Stack Developer (Django, DRF, React.js, MySQL).
 
-<h3 align="center">
-    🔹
-    <a href="https://github.com/himateja27/Portfolio/issues">Report Bug</a> &nbsp; &nbsp;
-    🔹
-    <a href="https://github.com/himateja27/Portfolio/issues">Request Feature</a>
-</h3>
+**Live demo:** [personal-portfolio-black-pi.vercel.app](https://personal-portfolio-black-pi.vercel.app/)
 
-## TL;DR
+**Repository:** [github.com/himateja27/React-Personal-Portfolio](https://github.com/himateja27/React-Personal-Portfolio)
 
-You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [himateja27](https://github.com/himateja27/Portfolio). Thanks!
-
-## Built With
-
-My personal portfolio <a href="https://personal-portfolio-black-pi.vercel.app/" target="_blank">HimaTeja</a> which features some of my github projects as well as my resume and technical skills.<br/>
-
-This project was built using these technologies.
-
-- React.js
-- Node.js
-- Express.js
-- CSS3
-- VsCode
-- Vercel
+---
 
 ## Features
 
-**📖 Multi-Page Layout**
+- Multi-page layout: Home, About, Projects, Resume, Internship, Certifications
+- Responsive design for mobile, tablet, and desktop
+- Dark / light theme toggle
+- Animated hero section with typing effect
+- Project showcase with GitHub links
+- Resume PDF download and preview
+- GitHub contribution calendar on About page
+- Contact form (mailto)
 
-**🎨 Styled with React-Bootstrap and Css with easy to customize colors**
+---
 
-**📱 Fully Responsive**
+## Tech Stack
 
-## Getting Started
+| Layer | Technology |
+|-------|------------|
+| Frontend | React 17, React Router 6 |
+| UI | React Bootstrap 5, Custom CSS |
+| Effects | react-tsparticles, react-type-animation |
+| Other | react-github-calendar, react-icons |
 
-Clone down this repository. You will need `node.js` and `git` installed globally on your machine.
+---
 
-## 🛠 Installation and Setup Instructions
+## Installation
 
-1. Installation: `npm install`
+### Prerequisites
 
-2. In the project directory, you can run: `npm start`
+- [Node.js](https://nodejs.org/) 16 or higher
+- [npm](https://www.npmjs.com/) 8 or higher
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-The page will reload if you make edits.
+### Steps
 
-## Usage Instructions
+```bash
+# Clone the repository
+git clone https://github.com/himateja27/React-Personal-Portfolio.git
+cd React-Personal-Portfolio
 
-Open the project folder and Navigate to `/src/components/`. <br/>
-You will find all the components used and you can edit your information accordingly.
+# Install dependencies
+npm install
 
-### Show your support
+# Start development server
+npm start
+```
 
-Give a ⭐ if you like this website!
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+See `requirements.txt` for dependency reference and version notes.
+
+---
+
+## Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm start` | Run app in development mode |
+| `npm run build` | Create production build in `build/` |
+| `npm test` | Run tests |
+
+---
+
+## Project Structure
+
+```
+React-Personal-Portfolio/
+├── public/
+│   └── media/              # Profile photo & resume PDF
+├── src/
+│   ├── components/
+│   │   ├── About/          # About page, skills, GitHub, contact
+│   │   ├── Home/           # Hero & home about section
+│   │   ├── Projects/       # Project cards
+│   │   ├── Resume/         # Resume page
+│   │   ├── Navbar.js
+│   │   ├── Footer.js
+│   │   └── ...
+│   ├── App.js              # Routes
+│   └── style.css           # Global styles
+├── package.json
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## Customization
+
+Edit your information in these locations:
+
+| Content | File(s) |
+|---------|---------|
+| Hero text & buttons | `src/components/Home/Home.js` |
+| About section on home | `src/components/Home/Home2.js` |
+| Full about page | `src/components/About/About.js` |
+| Projects | `src/components/Projects/Projects.js` |
+| Resume | `src/components/Resume/ResumeNew.js` |
+| Profile image | `public/media/profile.jpg` |
+| Resume PDF | `public/media/himateja-fullstack-dev.pdf` |
+| Social links | `src/components/Navbar.js`, `src/components/Footer.js` |
+
+---
+
+## Deployment
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Deploy the `build` folder to [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/), or any static host.
+
+---
+
+## License
+
+Fork and modify for your own portfolio. Credit appreciated if you use this as a template.
+
+---
+
+## Author
+
+**Hima Teja Vankayalapati**
+
+- GitHub: [@himateja27](https://github.com/himateja27)
+- LinkedIn: [himateja27](https://www.linkedin.com/in/himateja27/)
+- Email: himatejahima032@gmail.com

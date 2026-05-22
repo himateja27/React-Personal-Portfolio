@@ -5,7 +5,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 function Internship() {
   return (
     <Container fluid className="internship-section">
-      <Container>
+      <Container className="page-container">
         <Row>
           <Col>
             <div className="internship-content">

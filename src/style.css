@@ -65,6 +65,23 @@ body {
   font-family: "Inter", sans-serif;
   min-height: 100vh;
   line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img,
+video,
+iframe,
+object {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 body.light-theme {
@@ -260,7 +277,6 @@ button:hover,
 }
 
 .internship-section {
-  padding: 100px 0;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 
@@ -346,7 +362,6 @@ button:hover,
 }
 
 .certifications-section {
-  padding: 100px 0;
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
 }
 
@@ -460,6 +475,8 @@ button:hover,
   min-height: 100vh;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  width: 100%;
 }
 
 .hero-content {
@@ -479,15 +496,13 @@ button:hover,
 
 .hero-copy h1 {
   font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 1;
+  line-height: 1.1;
   font-weight: 800;
   margin-bottom: 1rem;
   max-width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  overflow-wrap: normal;
-  word-break: normal;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
   background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -604,8 +619,18 @@ button:hover,
 .home-about-section,
 .about-page,
 .project-section,
-.resume-page {
-  padding: 80px 24px;
+.resume-page,
+.internship-section,
+.certifications-section {
+  padding: 100px 0 80px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.about-page .container,
+.project-section .container,
+.resume-page .container {
+  max-width: 1200px;
 }
 
 .section-header {
@@ -637,7 +662,9 @@ button:hover,
   border: 1px solid rgba(56, 189, 248, 0.16);
   border-radius: 32px;
   padding: 3rem 1.5rem;
-  margin-top: 2rem;
+  margin: 2rem auto 0;
+  max-width: 1200px;
+  width: calc(100% - 2rem);
 }
 
 .home-about-description {
@@ -686,15 +713,31 @@ button:hover,
   color: var(--text);
 }
 
+.project-card-row {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  margin: 0;
+}
+
 .project-card-col {
   display: flex;
+  min-width: 0;
 }
 
 .project-card-col .project-card-view {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+}
+
+.project-card-view .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
 }
 
 .project-card-view {
@@ -704,6 +747,8 @@ button:hover,
   background: rgba(15, 23, 42, 0.95);
   border: 1px solid rgba(56, 189, 248, 0.18);
   color: var(--text);
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .project-card-view,
@@ -715,6 +760,41 @@ button:hover,
   color: var(--text) !important;
 }
 
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.project-card-view:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.28);
+}
+
+.project-card-view .card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.project-description {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.project-features {
+  margin: 0 0 1.5rem;
+  padding-left: 1.2rem;
+}
+
+.project-features li {
+  margin-bottom: 0.65rem;
+  font-size: 0.98rem;
+}
+
 .project-action-button {
   border-radius: 0.75rem;
   padding: 0.75rem 1.25rem;
@@ -723,6 +803,11 @@ button:hover,
   color: var(--text) !important;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.project-action-button:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.14);
 }
 
 body.light-theme .tool-icon-card,
@@ -767,7 +852,7 @@ body.light-theme .feature-list {
 
   .tool-stack-row,
   .skills-section .tech-stack-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
 }
 
@@ -817,8 +902,10 @@ body.light-theme .feature-list {
     margin-top: 1.5rem;
   }
 }
-  display: grid;
-  gap: 2rem;
+
+.about-top-row,
+.career-section {
+  margin-bottom: 2rem;
 }
 
 .about-intro {
@@ -922,85 +1009,6 @@ body.light-theme .feature-list {
   color: var(--accent);
 }
 
-.project-card-row {
-  display: grid;
-  gap: 1.75rem;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-}
-
-.project-card-view {
-  padding: 2rem;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  background: rgba(15, 23, 42, 0.95);
-  border: 1px solid rgba(56, 189, 248, 0.18);
-  color: var(--text);
-}
-
-.project-card-view,
-.project-card-view .card-title,
-.project-card-view .project-description,
-.project-card-view .project-features,
-.project-card-view .project-features li,
-.project-card-view .btn {
-  color: var(--text) !important;
-}
-
-.project-card-view:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.28);
-}
-
-.project-card-view .card-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--text);
-}
-
-.project-description {
-  color: var(--text);
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
-  line-height: 1.75;
-}
-
-.project-features {
-  margin: 0 0 2rem;
-  padding-left: 1.2rem;
-  color: var(--text);
-}
-
-.project-features li {
-  margin-bottom: 0.65rem;
-  font-size: 0.98rem;
-}
-
-.project-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.project-action-button {
-  border-radius: 0.75rem;
-  padding: 0.75rem 1.25rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  color: var(--text) !important;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-}
-
-.project-action-button:hover {
-  transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.14);
-}
-
-.project-action-button:hover {
-  transform: scale(1.05);
-}
-
 .detail-panel {
   padding: 1.75rem;
 }
@@ -1029,6 +1037,13 @@ body.light-theme .feature-list {
 .github-activity-section {
   padding: 2rem;
   margin-bottom: 3rem;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.github-activity-section > div {
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .github-activity-section h3 {
@@ -1037,6 +1052,19 @@ body.light-theme .feature-list {
 
 .contact-section {
   padding: 3rem 0 5rem;
+  align-items: flex-start;
+}
+
+.contact-section .section-heading,
+.contact-section .section-text {
+  text-align: left;
+}
+
+@media (min-width: 992px) {
+  .contact-section .contact-panel {
+    position: sticky;
+    top: 100px;
+  }
 }
 
 .contact-panel {
@@ -1078,9 +1106,12 @@ body.light-theme .feature-list {
 }
 
 .resume-keypoints {
-  display: grid;
-  gap: 1.25rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 2rem;
+}
+
+.resume-preview object {
+  max-width: 100%;
+  border-radius: 16px;
 }
 
 .resume-card {
@@ -1166,13 +1197,13 @@ body.light-theme .feature-list {
     width: 100%;
   }
 
-  .about-top-row,
-  .career-section,
-  .resume-keypoints,
-  .project-card-row,
+  .project-card-row {
+    grid-template-columns: 1fr;
+  }
+
   .skills-section .tech-stack-row,
   .tool-stack-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .contact-form {

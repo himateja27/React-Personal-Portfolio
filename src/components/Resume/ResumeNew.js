@@ -1,16 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 
 function ResumeNew() {
-  const [width, setWidth] = useState(1200);
-  const [pdfError, setPdfError] = useState(false);
-
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
-
   const resumeFileName = "Hima_Teja_Vankayalapati_Resume.pdf";
   const resumeUrl =
     process.env.PUBLIC_URL + "/media/himateja-fullstack-dev.pdf";
@@ -35,19 +28,10 @@ function ResumeNew() {
       });
   };
 
-  const onDocumentLoadSuccess = () => {
-    setPdfError(false);
-  };
-
-  const onDocumentLoadError = (error) => {
-    console.error("PDF loading error:", error);
-    setPdfError(true);
-  };
-
   return (
     <section className="resume-page">
       <Particle />
-      <Container>
+      <Container className="page-container">
         <div className="section-header">
           <h2 className="section-heading">Resume</h2>
           <p className="section-text">
@@ -67,40 +51,23 @@ function ResumeNew() {
         </div>
 
         <div className="resume-preview">
-          {pdfError ? (
-            <div className="pdf-error-message">
-              <p>
-                Resume preview is not available. Please download the PDF to
-                view.
-              </p>
-              <Button
-                variant="primary"
-                onClick={handleDownload}
-                className="download-btn"
-              >
-                <AiOutlineDownload /> Download Resume PDF
-              </Button>
-            </div>
-          ) : (
-            <object
-              data={resumeUrl}
-              type="application/pdf"
-              width="100%"
-              height="900px"
-            >
-              <p>
-                Your browser does not support PDF preview. Please download the
-                resume using the button above or open it directly.
-              </p>
-              <a href={resumeUrl} target="_blank" rel="noreferrer">
-                Open Resume PDF
-              </a>
-            </object>
-          )}
+          <object
+            data={resumeUrl}
+            type="application/pdf"
+            width="100%"
+            height="900px"
+          >
+            <p>
+              Your browser does not support PDF preview. Please download the
+              resume using the button above or open it directly.
+            </p>
+            <a href={resumeUrl} target="_blank" rel="noreferrer">
+              Open Resume PDF
+            </a>
+          </object>
         </div>
 
-        <div className="resume-keypoints">
-          <Row>
+        <Row className="resume-keypoints g-4">
             <Col md={4} className="resume-card">
               <h4>Backend</h4>
               <ul>
@@ -126,8 +93,7 @@ function ResumeNew() {
                 <li>Personal Portfolio Website</li>
               </ul>
             </Col>
-          </Row>
-        </div>
+        </Row>
       </Container>
     </section>
   );

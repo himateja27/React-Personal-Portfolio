@@ -36,7 +36,7 @@ function Certifications() {
 
   return (
     <Container fluid className="certifications-section">
-      <Container>
+      <Container className="page-container">
         <Row>
           <Col>
             <div className="certifications-content">

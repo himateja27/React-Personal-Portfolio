@@ -27,8 +27,8 @@ function About() {
   return (
     <section className="about-page">
       <Particle />
-      <Container>
-        <Row className="about-top-row">
+      <Container className="page-container">
+        <Row className="about-top-row g-4">
           <Col lg={7} md={12} className="about-intro">
             <h2 className="section-heading">Professional Summary</h2>
             <p className="section-text">
@@ -75,7 +75,7 @@ function About() {
           </Col>
         </Row>
 
-        <Row className="career-section">
+        <Row className="career-section g-4">
           <Col lg={6} md={12}>
             <div className="detail-panel">
               <h3>Embedded Systems Virtual Internship</h3>
@@ -124,7 +124,7 @@ function About() {
           </Col>
         </Row>
 
-        <Row className="contact-section" id="contact">
+        <Row className="contact-section g-4" id="contact">
           <Col lg={5} md={12} className="contact-panel">
             <h2 className="section-heading">Contact</h2>
             <p className="section-text">
