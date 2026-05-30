@@ -6,7 +6,7 @@ import { AiOutlineDownload } from "react-icons/ai";
 function ResumeNew() {
   const resumeFileName = "Hima_Teja_Vankayalapati_Resume.pdf";
   const resumeUrl =
-    process.env.PUBLIC_URL + "/media/himateja-fullstack-dev.pdf";
+    process.env.PUBLIC_URL + "/media/HimaTeja-FullStackDev (9).pdf";
 
   const handleDownload = () => {
     fetch(resumeUrl)

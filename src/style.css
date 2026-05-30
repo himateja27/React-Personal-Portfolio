@@ -1570,3 +1570,159 @@ body.light-theme .about-profile-card .profile-card-role {
     height: 220px;
   }
 }
+
+/* Freelance Projects Styles */
+.freelance-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.freelance-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--secondary-accent) 100%);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(56, 189, 248, 0.3);
+}
+
+.project-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.project-category {
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.technologies-section {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-badge {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.tech-badge:hover {
+  background: var(--accent);
+  color: white;
+  transform: scale(1.05);
+}
+
+body.light-theme .tech-badge {
+  background: #f5f7ff;
+  border-color: rgba(15, 23, 42, 0.08);
+  color: #101828;
+}
+
+body.light-theme .tech-badge:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* Freelance Experience Section */
+.freelance-experience-section {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  backdrop-filter: blur(10px);
+}
+
+.experience-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.experience-description {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.experience-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-highlights li {
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.experience-highlights li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+body.light-theme .freelance-experience-section {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+body.light-theme .experience-heading,
+body.light-theme .experience-description,
+body.light-theme .experience-highlights li {
+  color: #101828;
+}
+
+/* Responsive adjustments for tech badges */
+@media (max-width: 767px) {
+  .tech-badges {
+    gap: 6px;
+  }
+
+  .tech-badge {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+
+  .freelance-experience-section {
+    padding: 1.5rem;
+  }
+}

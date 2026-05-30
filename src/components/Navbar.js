@@ -8,6 +8,7 @@ import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
+  AiOutlineLaptop,
 } from "react-icons/ai";
 import { CgFileDocument } from "react-icons/cg";
 import {
@@ -94,6 +95,17 @@ function NavBar() {
                 className="nav-link-premium"
               >
                 <AiOutlineFundProjectionScreen /> Projects
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/freelance"
+                onClick={() => updateExpanded(false)}
+                className="nav-link-premium"
+              >
+                <AiOutlineLaptop /> Freelance
               </Nav.Link>
             </Nav.Item>
 

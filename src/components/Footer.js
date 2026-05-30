@@ -11,7 +11,10 @@ function Footer() {
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
     { to: "/project", label: "Projects" },
+    { to: "/freelance", label: "Freelance" },
     { to: "/resume", label: "Resume" },
+    { to: "/internship", label: "Internship" },
+    { to: "/certifications", label: "Certifications" },
   ];
 
   return (

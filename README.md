@@ -105,7 +105,7 @@ Edit your information in these locations:
 | Projects | `src/components/Projects/Projects.js` |
 | Resume | `src/components/Resume/ResumeNew.js` |
 | Profile image | `public/media/profile.jpg` |
-| Resume PDF | `public/media/himateja-fullstack-dev.pdf` |
+| Resume PDF | `public/media/HimaTeja-FullStackDev (9).pdf` |
 | Social links | `src/components/Navbar.js`, `src/components/Footer.js` |
 
 ---

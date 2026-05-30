@@ -42,7 +42,7 @@ const projects = [
       "Contact forms and social media integration",
       "Optimized for performance and SEO",
     ],
-    repoLink: "https://github.com/himateja27/Personal-Portfolio-Frontend",
+    repoLink: "https://github.com/himateja27/React-Personal-Portfolio",
   },
   {
     title: "LangChain Document Q&A Bot",
