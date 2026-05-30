@@ -2,7 +2,7 @@
 
 Modern, responsive portfolio website for **Hima Teja Vankayalapati** — Python Full Stack Developer (Django, DRF, React.js, MySQL).
 
-**Live demo:** [personal-portfolio-black-pi.vercel.app](https://personal-portfolio-black-pi.vercel.app/)
+**Live demo:** [personal-portfolio-black-pi.vercel.app](https://react-personal-portfolio-blkf.vercel.app/)
 
 **Repository:** [github.com/himateja27/React-Personal-Portfolio](https://github.com/himateja27/React-Personal-Portfolio)
 
